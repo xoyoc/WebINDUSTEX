@@ -12,6 +12,7 @@ WebINDUSTEX/
 ├── style.css                   # Estilos globales y componentes
 ├── main.js                     # Animaciones, contadores, formulario
 ├── logotipo.png                # Logotipo oficial INDUSTEX
+├── fanicon.png                 # Favicon / ícono de pestaña
 ├── Paleta_colores_INDUSTEX.md  # Referencia de paleta de marca
 └── README.md
 ```
