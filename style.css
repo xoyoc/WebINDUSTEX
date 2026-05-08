@@ -609,3 +609,150 @@ img { display:block; max-width:100%; }
     .porque-content { padding:60px 5%; }
     .footer-top { grid-template-columns:1fr; }
 }
+
+/* ============================================================
+   TEMA CLARO / OSCURO
+   ============================================================ */
+
+/* ── Logo visibility (default = dark theme) ── */
+.logo-light { display:none; }
+.logo-dark  { display:block; }
+
+[data-theme="light"] .logo-light { display:block; }
+[data-theme="light"] .logo-dark  { display:none; }
+
+/* ── Iconos del toggle ── */
+.theme-icon-dark  { display:block; }
+.theme-icon-light { display:none; }
+
+[data-theme="light"] .theme-icon-dark  { display:none; }
+[data-theme="light"] .theme-icon-light { display:block; }
+
+/* ── Botón toggle ── */
+.navbar-actions {
+    display:flex; align-items:center; gap:.35rem;
+}
+.theme-toggle {
+    background:none; border:1px solid rgba(255,255,255,.18);
+    border-radius:50%; cursor:pointer;
+    width:36px; height:36px;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--white); font-size:.9rem;
+    transition:all .25s;
+    flex-shrink:0;
+}
+.theme-toggle:hover {
+    background:rgba(232,76,31,.18);
+    border-color:var(--orange);
+    color:var(--orange);
+}
+[data-theme="light"] .theme-toggle {
+    border-color:rgba(43,43,43,.22);
+    color:var(--dark);
+}
+[data-theme="light"] .theme-toggle:hover {
+    background:rgba(232,76,31,.1);
+    border-color:var(--orange);
+    color:var(--orange);
+}
+
+/* ── Transición global suave ── */
+body, .navbar, .servicios, .galeria,
+.porque-content, .contacto-form-wrap,
+.section-title, .fg input, .fg select, .fg textarea,
+.fg label, .form-title, .pq-item h4, .pq-item p,
+.porque-intro, .navbar-nav a {
+    transition: background .35s ease, color .35s ease,
+                border-color .25s ease;
+}
+
+/* ============================================================
+   TEMA OSCURO — overrides sobre las secciones claras
+   ============================================================ */
+[data-theme="dark"] body {
+    background:#111;
+    color:rgba(245,245,245,.82);
+}
+[data-theme="dark"] .servicios,
+[data-theme="dark"] .galeria {
+    background:#161616;
+}
+[data-theme="dark"] .porque-content {
+    background:#161616;
+}
+[data-theme="dark"] .contacto-form-wrap {
+    background:#161616;
+}
+
+/* Títulos y texto en secciones claras → oscuro */
+[data-theme="dark"] .section-title:not(.light) {
+    color:rgba(245,245,245,.92);
+}
+[data-theme="dark"] .porque-intro {
+    color:rgba(245,245,245,.58);
+}
+[data-theme="dark"] .pq-item:hover {
+    background:rgba(255,255,255,.05);
+}
+[data-theme="dark"] .pq-item h4 {
+    color:rgba(245,245,245,.88);
+}
+[data-theme="dark"] .pq-item p {
+    color:rgba(245,245,245,.52);
+}
+
+/* Formulario */
+[data-theme="dark"] .form-title {
+    color:rgba(245,245,245,.92);
+}
+[data-theme="dark"] .fg label {
+    color:rgba(245,245,245,.75);
+}
+[data-theme="dark"] .fg input,
+[data-theme="dark"] .fg select,
+[data-theme="dark"] .fg textarea {
+    background:#1e1e1e;
+    border-color:rgba(255,255,255,.12);
+    color:rgba(245,245,245,.85);
+}
+[data-theme="dark"] .fg input::placeholder,
+[data-theme="dark"] .fg textarea::placeholder {
+    color:rgba(245,245,245,.28);
+}
+[data-theme="dark"] .fg select option {
+    background:#1e1e1e;
+}
+[data-theme="dark"] .fg input:focus,
+[data-theme="dark"] .fg select:focus,
+[data-theme="dark"] .fg textarea:focus {
+    border-color:var(--orange);
+    box-shadow:0 0 0 3px rgba(232,76,31,.15);
+}
+
+/* ============================================================
+   TEMA CLARO — overrides sobre la navbar oscura (base CSS)
+   ============================================================ */
+[data-theme="light"] .navbar {
+    background:rgba(255,255,255,.97);
+    border-bottom:2px solid var(--orange);
+    box-shadow:0 2px 18px rgba(0,0,0,.07);
+}
+[data-theme="light"] .navbar.scrolled {
+    box-shadow:0 4px 24px rgba(0,0,0,.12);
+}
+[data-theme="light"] .navbar-nav a {
+    color:var(--dark);
+}
+[data-theme="light"] .navbar-nav a:hover {
+    color:var(--orange);
+}
+[data-theme="light"] .hamburger span {
+    background:var(--dark);
+}
+[data-theme="light"] .navbar-nav.open {
+    background:rgba(255,255,255,.98);
+    border-top:1px solid rgba(0,0,0,.07);
+}
+[data-theme="light"] .navbar-nav.open a {
+    color:var(--dark);
+}

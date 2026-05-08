@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,13 +15,17 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <script>
+      (function(){var t=localStorage.getItem('industex-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();
+    </script>
 </head>
 <body>
 
 <!-- NAVBAR -->
 <nav class="navbar" id="navbar">
     <a href="#inicio" class="navbar-logo">
-        <img src="logotipo.png" alt="INDUSTEX">
+        <img src="logotipo.png"   alt="INDUSTEX" class="logo-light">
+        <img src="logotipo_n.png" alt="INDUSTEX" class="logo-dark">
     </a>
     <ul class="navbar-nav" id="navMenu">
         <li><a href="#servicios">Servicios</a></li>
@@ -30,9 +34,15 @@
         <li><a href="#nosotros">Nosotros</a></li>
         <li><a href="#contacto" class="nav-cta">Cotizar Ahora</a></li>
     </ul>
-    <button class="hamburger" id="hamburger" aria-label="Menú" onclick="toggleMenu()">
-        <span></span><span></span><span></span>
-    </button>
+    <div class="navbar-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+            <i class="fas fa-sun  theme-icon-dark"></i>
+            <i class="fas fa-moon theme-icon-light"></i>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menú" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
 </nav>
 
 <!-- HERO -->
@@ -340,7 +350,7 @@
 <footer class="footer">
     <div class="footer-top">
         <div class="footer-brand">
-            <img src="logotipo.png" alt="INDUSTEX">
+            <img src="logotipo_n.png" alt="INDUSTEX">
             <p>Empresa michoacana especializada en bordados, uniformes y equipo de protección personal. Servicio profesional desde el puerto de Lázaro Cárdenas.</p>
             <div class="footer-social">
                 <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>

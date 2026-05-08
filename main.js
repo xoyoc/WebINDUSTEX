@@ -69,6 +69,26 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     });
 });
 
+// ── Theme toggle ──
+(function () {
+    const btn  = document.getElementById('themeToggle');
+    const html = document.documentElement;
+
+    function applyTheme(theme) {
+        html.setAttribute('data-theme', theme);
+        localStorage.setItem('industex-theme', theme);
+    }
+
+    // Restore persisted theme (inline script already set the attribute;
+    // this just wires up the button after DOM is ready)
+    const saved = localStorage.getItem('industex-theme') || 'dark';
+    applyTheme(saved);
+
+    btn.addEventListener('click', function () {
+        applyTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    });
+})();
+
 // ── Active nav link on scroll ──
 const sections = document.querySelectorAll('section[id], div[id]');
 const navLinks = document.querySelectorAll('.navbar-nav a[href^="#"]');
