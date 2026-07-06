@@ -33,7 +33,7 @@ img { display:block; max-width:100%; }
     transition: height .3s, box-shadow .3s;
 }
 .navbar.scrolled { height:64px; box-shadow:0 4px 24px rgba(0,0,0,.35); }
-.navbar-logo img { height:44px; transition:height .3s; }
+.navbar-logo img { height:44px; width:auto; transition:height .3s; }
 .navbar.scrolled .navbar-logo img { height:36px; }
 
 .navbar-nav { display:flex; gap:2rem; list-style:none; align-items:center; }
@@ -500,7 +500,7 @@ img { display:block; max-width:100%; }
     display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr;
     gap:3rem; margin-bottom:3rem;
 }
-.footer-brand img { height:38px; margin-bottom:1.1rem; }
+.footer-brand img { height:38px; width:auto; margin-bottom:1.1rem; }
 .footer-brand p { color:rgba(245,245,245,.48); font-size:.85rem; line-height:1.8; margin-bottom:1.4rem; }
 .footer-social { display:flex; gap:.7rem; }
 .footer-social a {
