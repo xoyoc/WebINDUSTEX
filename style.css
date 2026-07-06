@@ -73,7 +73,7 @@ img { display:block; max-width:100%; }
 }
 .hero-bg {
     position:absolute; inset:0;
-    background: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1920&q=85') center/cover no-repeat;
+    background: url('img/web/hero-bordado.jpg') center/cover no-repeat;
     animation: heroKen 18s ease-in-out infinite alternate;
 }
 @keyframes heroKen {
